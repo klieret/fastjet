@@ -214,7 +214,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = 0
         if nsub == 0:
             raise ValueError("Nsub cannot be 0")
@@ -249,7 +249,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_exclusive_subjets_up_to(px, py, pz, E, nsub)
         return ak.Array(
             ak.layout.RecordArray(
@@ -285,7 +285,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_exclusive_subdmerge_max(px, py, pz, E, nsub)
         out = np_results[0]
         out = out[0]
@@ -298,7 +298,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_n_exclusive_subjets(px, py, pz, E, dcut)
         out = np_results[0]
         out = out[0]
@@ -311,7 +311,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_has_parents(px, py, pz, E)
         out = np_results[0]
         out = out[0]
@@ -324,7 +324,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_has_child(px, py, pz, E)
         out = np_results[0]
         out = out[0]
@@ -337,7 +337,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_jet_scale_for_algorithm(px, py, pz, E)
         out = np_results[0]
         out = out[0]
@@ -394,7 +394,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_get_parents(px, py, pz, E)
         return ak.Array(
             ak.layout.RecordArray(
@@ -417,7 +417,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_get_child(px, py, pz, E)
         return ak.Array(
             ak.layout.RecordArray(
