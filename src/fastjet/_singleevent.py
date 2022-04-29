@@ -272,7 +272,7 @@ class _classsingleevent:
             pz = data.pz
             E = data.E
         except AttributeError:
-            raise AttributeError("Lorentz vector not found")
+            raise AttributeError("Lorentz vector not found") from None
         np_results = self._results.to_numpy_exclusive_subdmerge(px, py, pz, E, nsub)
         out = np_results[0]
         out = out[0]
