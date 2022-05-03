@@ -101,13 +101,13 @@ class _classsingleevent:
     def exclusive_jets(self, n_jets, dcut):
         np_results = 0
         if n_jets == 0:
-            raise ValueError("Njets cannot be 0")
+            raise ValueError("Njets cannot be 0") from None
         if dcut == -1 and n_jets != -1:
             np_results = self._results.to_numpy_exclusive_njet(n_jets)
         if n_jets == -1 and dcut != -1:
             np_results = self._results.to_numpy_exclusive_dcut(dcut)
         if np_results == 0:
-            raise ValueError("Either Dcut or Njets should be entered")
+            raise ValueError("Either Dcut or Njets should be entered") from None
         return ak.Array(
             ak.layout.RecordArray(
                 (
@@ -227,7 +227,7 @@ class _classsingleevent:
                 px, py, pz, E, dcut
             )
         if np_results == 0:
-            raise ValueError("Either Dcut or Njets should be entered")
+            raise ValueError("Either Dcut or Njets should be entered") from None
         return ak.Array(
             ak.layout.RecordArray(
                 [

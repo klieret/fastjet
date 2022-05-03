@@ -233,7 +233,7 @@ class _classmultievent:
             )
             of = np.insert(np_results[-1], len(np_results[-1]), len(np_results[0]))
         if np_results == 0 and of == 0:
-            raise ValueError("Either NJets or Dcut sould be entered")
+            raise ValueError("Either NJets or Dcut sould be entered") from None
 
         return ak.Array(
             ak.layout.ListOffsetArray64(
